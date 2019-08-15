@@ -5,6 +5,8 @@ const routes = require('./routes');
 
 const server = express();
 
+const port = process.env.PORT || 8080;
+
 mongoose.connect(
     'mongodb+srv://omnistack:omnistack@cluster0-tfedl.mongodb.net/test?retryWrites=true&w=majority', 
     {
@@ -16,4 +18,4 @@ server.use(cors());
 server.use(express.json());
 server.use(routes);
 
-server.listen(3100);
+server.listen(port);
